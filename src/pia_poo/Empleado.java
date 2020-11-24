@@ -2,7 +2,7 @@
 package pia_poo;
 import java.util.Scanner;
 
-public class Empleado implements IDepartamentos{
+public class Empleado implements IDepartamentos, IEmpleado{
     
     private String id_empleado;
     //Estos atributos de abajo se heredan a Coordinador
@@ -107,6 +107,16 @@ public class Empleado implements IDepartamentos{
         String eml = var.nextLine();
         emple.setEmail(eml);
         emple.setSueldo(emple.calcularSueldo());
+    }
+
+    @Override
+    public void empleadoTrabaja() {
+        //Este metodo debe mostrar un mensaje que describa el trabajo del empleado
+    }
+
+    @Override
+    public void empleadoSeRelaciona() {
+        //este metodo debe mostrar un mensaje que diga con que departamentos se relaciona el departamento de este empleado
     }
 
     

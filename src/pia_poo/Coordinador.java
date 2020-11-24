@@ -2,7 +2,7 @@
 package pia_poo;
 import java.util.Scanner;
 
-public class Coordinador extends Empleado{
+public class Coordinador extends Empleado implements IEmpleado{
     
     private String id_coordinador;
    
@@ -39,4 +39,13 @@ public class Coordinador extends Empleado{
         this.id_coordinador = id_coordinador;
     }
 
+    @Override
+    public void empleadoTrabaja() {
+        //Este metodo debe mostrar un mensaje que describa el trabajo del coordinador
+    }
+
+    @Override
+    public void empleadoSeRelaciona() {
+        //este metodo debe mostrar un mensaje que diga con que departamentos se relaciona el departamento de este empleado
+    }
 }
