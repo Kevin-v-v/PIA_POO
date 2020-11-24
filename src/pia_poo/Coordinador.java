@@ -10,6 +10,7 @@ public class Coordinador {
     private String telefono;
     private String email;
     
+    
     Scanner sc = new Scanner(System.in);
     
     public float calcularSueldo(){
@@ -24,7 +25,28 @@ public class Coordinador {
         
         return horas*pago;
     }
+    
+    public void registarTrabajadores(Coordinador coordi) {
+        System.out.println("Ingrese id de coordinador");
+        String id = sc.nextLine();
+        coordi.setId_coordinador(id);
+        System.out.println("Ingrese nombre");
+        String nom = sc.nextLine();
+        coordi.setNombre(nom);
+        System.out.println("Ingrese apellido paterno");
+        String app = sc.nextLine();
+        coordi.setApellidoP(app);
+        System.out.println("Ingrese telefono");
+        String tel = sc.nextLine();
+        coordi.setTelefono(tel);
+        System.out.println("Ingrese email");
+        String eml = sc.nextLine();
+        coordi.setEmail(eml);
+    }
 
+     /*@Override
+    public void registarTrabajadores() {
+    }*/
     
     public String getId_coordinador() {
         return id_coordinador;
@@ -74,6 +96,10 @@ public class Coordinador {
     public void setEmail(String email) {
         this.email = email;
     }
+
+   
+
+   
     
     
     
