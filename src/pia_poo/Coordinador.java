@@ -44,8 +44,5 @@ public class Coordinador extends Empleado implements IEmpleado{
         //Este metodo debe mostrar un mensaje que describa el trabajo del coordinador
     }
 
-    @Override
-    public void empleadoSeRelaciona() {
-        //este metodo debe mostrar un mensaje que diga con que departamentos se relaciona el departamento de este empleado
-    }
+   
 }

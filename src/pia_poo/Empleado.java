@@ -111,13 +111,9 @@ public class Empleado implements IDepartamentos, IEmpleado{
 
     @Override
     public void empleadoTrabaja() {
-        //Este metodo debe mostrar un mensaje que describa el trabajo del empleado
+        System.out.println(DEPTO_TRABAJA[n]);
     }
 
-    @Override
-    public void empleadoSeRelaciona() {
-        //este metodo debe mostrar un mensaje que diga con que departamentos se relaciona el departamento de este empleado
-    }
 
     
 }
