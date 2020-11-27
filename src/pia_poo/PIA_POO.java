@@ -13,6 +13,7 @@ public class PIA_POO {
         Empleado[] empleados = new Empleado[100];
         int contEmp = 0, contCordi = 0;
         int opc;
+        int auxiliar=0;
         Scanner in = new Scanner(System.in);
         do{
         do{
@@ -36,10 +37,11 @@ public class PIA_POO {
                     System.out.println("Excedio el número máximo de coordinadores");
                 break;
             case 2:
+                auxiliar++;
                 if(contEmp<=99)
                 {
                     empleados[contEmp] = new Empleado();
-                    empleados[contEmp].registarEmpleados(empleados[contEmp]);
+                    empleados[contEmp].registarEmpleados(empleados[contEmp], auxiliar);
                 }
                 else
                     System.out.println("Excedio el número máximo de empleados");

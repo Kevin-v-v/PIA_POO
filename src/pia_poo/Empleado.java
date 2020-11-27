@@ -1,6 +1,14 @@
 
 package pia_poo;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Empleado implements IDepartamentos, IEmpleado{
 
@@ -105,41 +113,132 @@ public class Empleado implements IDepartamentos, IEmpleado{
     }
    
    
-    public void registarEmpleados(Empleado emple) {
-        boolean band = false;
-        System.out.println("Ingrese id de empleado");
-        String id = var.nextLine();
-        emple.setId_empleado(id);
-        System.out.println("Ingrese nombre");
-        String nom = var.nextLine();
-        emple.setNombre(nom);
-        System.out.println("Ingrese apellido paterno");
-        String app = var.nextLine();
-        emple.setApellidoP(app);
-        System.out.println("Ingrese telefono");
-        String tel = var.nextLine();
-        emple.setTelefono(tel);
-        System.out.println("Ingrese email");
-        String eml = var.nextLine();
-        emple.setEmail(eml);
-        do{
-        band = false;
-        System.out.println("Ingrese el departamento sin acentos");
-        String depa = var.nextLine();
-        for(int i=0; i<5; i++){
-            if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){
-                band=true;
-                emple.setId_departamento(Integer.toString(i));
-                break;
+    public void registarEmpleados(Empleado emple, int auxiliar) {
+        
+        if(auxiliar == 1){ // En caso de que sea la primera ejecucion para pasar los empleados guardados al arreglo de empleados.
+            try
+            {
+                int contAux=0;
+                String empaux = "";
+                Scanner entrada = new Scanner( new File( "Empleados.txt") ); // Lee los datos dentro del archivo
+                BufferedReader leer=new BufferedReader(new FileReader ("Empleados.txt"));
+                String linea="";
+                while((linea=leer.readLine()) != null)
+                {
+                    contAux++;
+                    if(linea.indexOf(empaux) != -1) // Al encontrar el dato buscado
+                    {   
+                        String id_empleadoAux = entrada.next(); 
+                        emple.setId_empleado(id_empleadoAux);
+                        String nombreAux = entrada.next(); 
+                        emple.setNombre(nombreAux);
+                        String apellidoPAux = entrada.next(); 
+                        emple.setApellidoP(apellidoPAux);
+                        String telefonoAux = entrada.next(); 
+                        emple.setTelefono(telefonoAux);
+                        String emailAux = entrada.next(); 
+                        emple.setEmail(emailAux);
+                        int deptAux = entrada.nextInt();
+                        emple.setId_departamento(Integer.toString(deptAux));
+                        float sueldoAux = entrada.nextFloat();
+                        emple.setSueldo(sueldoAux);
+
+                    }
+                    if(contAux == 1){
+                        System.out.println("La base de datos esta siendo actualizada, ingresa la opcion nuevamente...");
+                        try{
+                            Thread.sleep(2*1000);
+                        }catch (Exception e) {
+                            System.out.println(e);
+                        }
+                    }
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println(ex.getMessage());
             }
         }
-        }while(!band);
-        emple.setSueldo(emple.calcularSueldo());
+        else{
+            
+            
+            
+            boolean band = false;
+            System.out.println("Ingrese id de empleado");
+            String id = var.nextLine();
+            id = id + " ";
+            emple.setId_empleado(id);
+            System.out.println("Ingrese nombre");
+            String nom = var.nextLine();
+            nom = nom + " ";
+            emple.setNombre(nom);
+            System.out.println("Ingrese apellido paterno");
+            String app = var.nextLine();
+            app = app + " ";
+            emple.setApellidoP(app);
+            System.out.println("Ingrese telefono");
+            String tel = var.nextLine();
+            tel = tel + " ";
+            emple.setTelefono(tel);
+            System.out.println("Ingrese email");
+            String eml = var.nextLine();
+            emple.setEmail(eml);
+            int idDeptAux = 0;
+            do{
+            band = false;
+            System.out.println("Ingrese el departamento sin acentos");
+            String depa = var.nextLine();
+            for(int i=0; i<5; i++){
+                if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){
+                    band=true;
+                    emple.setId_departamento(Integer.toString(i));
+                    idDeptAux=i;
+                    break;
+                }
+            }
+            }while(!band);
+            float sueldoAux = calcularSueldo();
+            emple.setSueldo(sueldoAux);
+            File archivoEmpleado;
+            FileWriter escribir;
+            PrintWriter escribirLinea;
+            archivoEmpleado = new File( "Empleados.txt");
+            
+                try {
+                    archivoEmpleado.createNewFile();
+                    
+                    escribir = new FileWriter(archivoEmpleado, true);
+                    escribirLinea = new PrintWriter(escribir);
+                    
+                    escribirLinea.println();
+                    escribirLinea.print(id);
+                    escribirLinea.print(nom);
+                    escribirLinea.print(app);
+                    escribirLinea.print(tel);
+                    escribirLinea.print(eml);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(idDeptAux);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(sueldoAux);
+                            
+                    escribir.close();
+                    escribirLinea.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            
+            
+            
+            
+            }
     }
 
     @Override
     public void empleadoTrabaja() {
         System.out.println(DEPTO_TRABAJA[Integer.parseInt(id_departamento)]);
+    
     }
 
 
