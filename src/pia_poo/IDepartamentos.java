@@ -3,7 +3,7 @@ package pia_poo;
 
 
 public interface IDepartamentos {
-    static final String[] NOM_DEPTOS = {"Jardin","Cocina","Electrónica","Juguetería","Panadería"};
+    static final String[] NOM_DEPTOS = {"Jardin","Cocina","Electronica","Jugueteria","Panaderia"};
     static final String[] DEPTO_TRABAJA = {
     "Este empleado mantiene ordenada el area de jardineria que se encuentra a las afueras de la tienda, asi como apoyar a los clientes con dudas y sugerencias para que compren productos para su jardin",
     "Este empleado mantiene ordenada el area de cocina, asi como prepara demostraciones de distintos productos promocionados, y ayuda a los clientes a comprar articulos de cocina",

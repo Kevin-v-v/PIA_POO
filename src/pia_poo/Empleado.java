@@ -124,7 +124,7 @@ public class Empleado implements IDepartamentos, IEmpleado{
         emple.setEmail(eml);
         do{
         band = false;
-        System.out.println("Ingrese el departamento con acentos");
+        System.out.println("Ingrese el departamento sin acentos");
         String depa = var.nextLine();
         for(int i=0; i<5; i++){
             if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){
