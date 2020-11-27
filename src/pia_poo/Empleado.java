@@ -3,8 +3,23 @@ package pia_poo;
 import java.util.Scanner;
 
 public class Empleado implements IDepartamentos, IEmpleado{
+
+    /**
+     * @return the id_departamento
+     */
+    public String getId_departamento() {
+        return id_departamento;
+    }
+
+    /**
+     * @param id_departamento the id_departamento to set
+     */
+    public void setId_departamento(String id_departamento) {
+        this.id_departamento = id_departamento;
+    }
     
     private String id_empleado;
+    private String id_departamento;
     //Estos atributos de abajo se heredan a Coordinador
     private String nombre;
     private String apellidoP;
@@ -91,6 +106,7 @@ public class Empleado implements IDepartamentos, IEmpleado{
    
    
     public void registarEmpleados(Empleado emple) {
+        boolean band = false;
         System.out.println("Ingrese id de empleado");
         String id = var.nextLine();
         emple.setId_empleado(id);
@@ -106,12 +122,24 @@ public class Empleado implements IDepartamentos, IEmpleado{
         System.out.println("Ingrese email");
         String eml = var.nextLine();
         emple.setEmail(eml);
+        do{
+        band = false;
+        System.out.println("Ingrese el departamento con acentos");
+        String depa = var.nextLine();
+        for(int i=0; i<5; i++){
+            if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){
+                band=true;
+                emple.setId_departamento(Integer.toString(i));
+                break;
+            }
+        }
+        }while(!band);
         emple.setSueldo(emple.calcularSueldo());
     }
 
     @Override
     public void empleadoTrabaja() {
-        System.out.println(DEPTO_TRABAJA[n]);
+        System.out.println(DEPTO_TRABAJA[Integer.parseInt(id_departamento)]);
     }
 
 
