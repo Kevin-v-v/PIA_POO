@@ -28,10 +28,16 @@ public class PIA_POO {
         
         switch(opc){
             case 1:
+                if(contCordi<=9)
                 coordinadores[contCordi].registarCoordinadores(coordinadores[contCordi]);
+                else
+                    System.out.println("Excedio el número máximo de coordinadores");
                 break;
             case 2:
+                if(contEmp<=99)
                 empleados[contEmp].registarEmpleados(empleados[contEmp]);
+                else
+                    System.out.println("Excedio el número máximo de empleados");
                 break;
             case 3:
                 //llama a la funcion de guardar y se termina la ejecucion
