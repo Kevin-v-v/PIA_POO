@@ -1,6 +1,12 @@
 
 package pia_poo;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Coordinador extends Empleado implements IEmpleado{
     
@@ -26,6 +32,37 @@ public class Coordinador extends Empleado implements IEmpleado{
         String eml = sc.nextLine();
         coordi.setEmail(eml);
         coordi.setSueldo(coordi.calcularSueldo());
+        
+        File archivoCoordinador;
+            FileWriter escribir;
+            PrintWriter escribirLinea;
+            archivoCoordinador = new File( "Coordinadores.txt");
+            
+                try {
+                    archivoCoordinador.createNewFile();
+                    
+                    escribir = new FileWriter(archivoCoordinador, true);
+                    escribirLinea = new PrintWriter(escribir);
+                    
+                    escribirLinea.println();
+                    escribirLinea.print(id);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(nom);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(app);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(tel);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(eml);
+                    escribirLinea.print(" ");
+                    escribirLinea.print(coordi.getSueldo());
+                            
+                    escribir.close();
+                    escribirLinea.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        
     }
 
      

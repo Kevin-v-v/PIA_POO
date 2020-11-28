@@ -113,56 +113,8 @@ public class Empleado implements IDepartamentos, IEmpleado{
     }
    
    
-    public void registarEmpleados(Empleado emple, int auxiliar) {
+    public void registarEmpleados(Empleado emple) {
         
-        if(auxiliar == 1){ // En caso de que sea la primera ejecucion para pasar los empleados guardados al arreglo de empleados.
-            try
-            {
-                int contAux=0;
-                String empaux = "";
-                Scanner entrada = new Scanner( new File( "Empleados.txt") ); // Lee los datos dentro del archivo
-                BufferedReader leer=new BufferedReader(new FileReader ("Empleados.txt"));
-                String linea="";
-                while((linea=leer.readLine()) != null)
-                {
-                    contAux++;
-                    if(linea.indexOf(empaux) != -1) // Al encontrar el dato buscado
-                    {   
-                        String id_empleadoAux = entrada.next(); 
-                        emple.setId_empleado(id_empleadoAux);
-                        String nombreAux = entrada.next(); 
-                        emple.setNombre(nombreAux);
-                        String apellidoPAux = entrada.next(); 
-                        emple.setApellidoP(apellidoPAux);
-                        String telefonoAux = entrada.next(); 
-                        emple.setTelefono(telefonoAux);
-                        String emailAux = entrada.next(); 
-                        emple.setEmail(emailAux);
-                        int deptAux = entrada.nextInt();
-                        emple.setId_departamento(Integer.toString(deptAux));
-                        float sueldoAux = entrada.nextFloat();
-                        emple.setSueldo(sueldoAux);
-
-                    }
-                    if(contAux == 1){
-                        System.out.println("La base de datos esta siendo actualizada, ingresa la opcion nuevamente...");
-                        try{
-                            Thread.sleep(2*1000);
-                        }catch (Exception e) {
-                            System.out.println(e);
-                        }
-                    }
-                    
-                }
-            }
-            catch(Exception ex)
-            {
-                System.out.println(ex.getMessage());
-            }
-        }
-        else{
-            
-            
             
             boolean band = false;
             System.out.println("Ingrese id de empleado");
@@ -232,7 +184,7 @@ public class Empleado implements IDepartamentos, IEmpleado{
             
             
             
-            }
+            
     }
 
     @Override
