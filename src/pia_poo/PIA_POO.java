@@ -111,14 +111,13 @@ public class PIA_POO {
         System.out.println("=== PROGRAMA DE GESTION DE PERSONAL ===");
         System.out.println("1.-- REGISTRAR COORDINADORES");
         System.out.println("2.-- REGISTRAR EMPLEADOS");
-        System.out.println("3.-- GUARDAR Y SALIR");
+        System.out.println("3.-- CONSULTAS EMPLEADOS");
+        System.out.println("4.-- GUARDAR Y SALIR");
         System.out.println("========================================");
         System.out.println("Ingrese una opcion: > ");
-        System.out.println(empleados[4].getNombre()+empleados[4].getApellidoP()+empleados[4].getSueldo());
-            System.out.println(coordinadores[0].getNombre()+coordinadores[0].getApellidoP()+coordinadores[0].getSueldo());
         opc = in.nextInt();
         in.nextLine();
-        }while(opc<1||opc>3);
+        }while(opc<1||opc>4);
         
         switch(opc){
             case 1:
@@ -140,11 +139,30 @@ public class PIA_POO {
                     System.out.println("Excedio el número máximo de empleados");
                 break;
             case 3:
+                    do{
+                        System.out.println("=== CONSULTA DE EMPLEADOS ===");
+                        System.out.println("1.-- CONSULTA POR NOMBRE");
+                        System.out.println("2.-- CONSULTA POR DEPARTAMENTO");
+                        System.out.println("3.-- MOSTRAR TODOS");
+                        System.out.println("========================================");
+                        System.out.println("Ingrese una opcion: > ");
+                        opc = in.nextInt();
+                        in.nextLine();
+                    }while(opc<1||opc>3);
+                    switch(opc){
+                        case 1: Consultas.ConsultaEmpNombre(empleados,contEmp);
+                                break;
+                        case 2: Consultas.ConsultaId(empleados,contEmp);
+                                break;
+                        case 3: Consultas.ConsultaTodos(empleados,contEmp);
+                                break;
+                    }
+                    break;
+            case 4:
                 System.out.println("Gracias por usar el programa");
                 break;
-            
         }
-        }while(opc!=3);
+        }while(opc!=4);
 
     }
     

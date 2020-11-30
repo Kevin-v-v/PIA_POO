@@ -192,7 +192,11 @@ public class Empleado implements IDepartamentos, IEmpleado{
         System.out.println(DEPTO_TRABAJA[Integer.parseInt(id_departamento)]);
     
     }
-
-
+    
+    public String get_depto(){
+        return NOM_DEPTOS[Integer.parseInt(id_departamento)];
+    }
+    
+    
     
 }
