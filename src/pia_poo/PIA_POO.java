@@ -112,12 +112,13 @@ public class PIA_POO {
         System.out.println("1.-- REGISTRAR COORDINADORES");
         System.out.println("2.-- REGISTRAR EMPLEADOS");
         System.out.println("3.-- CONSULTAS EMPLEADOS");
-        System.out.println("4.-- GUARDAR Y SALIR");
+        System.out.println("4.-- CONSULTA DE COORDINADORES");
+        System.out.println("5.-- GUARDAR Y SALIR");
         System.out.println("========================================");
         System.out.println("Ingrese una opcion: > ");
         opc = in.nextInt();
         in.nextLine();
-        }while(opc<1||opc>4);
+        }while(opc<1||opc>5);
         
         switch(opc){
             case 1:
@@ -159,10 +160,13 @@ public class PIA_POO {
                     }
                     break;
             case 4:
+                Consultas.ConsultaCoordi(coordinadores, contCordi);
+                break;
+            case 5:
                 System.out.println("Gracias por usar el programa");
                 break;
         }
-        }while(opc!=4);
+        }while(opc!=5);
 
     }
     
