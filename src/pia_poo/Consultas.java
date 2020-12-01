@@ -16,7 +16,7 @@ public class Consultas {
             if (buscar.equalsIgnoreCase(empleados[i].getNombre())) {
                 band=true;
                 JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\n Id: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\n Teléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\n Sueldo: $" + empleados[i].getSueldo() + "\nActividad: " + empleados[i].getActivo(), "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
-               
+                break;
             }
         }
         if(!band){
@@ -34,7 +34,7 @@ public class Consultas {
         String depa = null;
         do{
             band = false;
-            depa=JOptionPane.showInputDialog(null, "Ingrese el nombre del empleado: " , "Consulta Departamentos", JOptionPane.INFORMATION_MESSAGE);
+            depa=JOptionPane.showInputDialog(null, "Ingrese el departamento: " , "Consulta Departamentos", JOptionPane.INFORMATION_MESSAGE);
            
             for(i=0; i<5; i++){
                 if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){

@@ -130,20 +130,17 @@ public class Empleado implements IDepartamentos, IEmpleado{
             
             boolean band = false;
             
-            String id = JOptionPane.showInputDialog(null, "Ingrese id de coordinador" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
-            id = id + " ";
+            String id = JOptionPane.showInputDialog(null, "Ingrese id del empleado" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
+           
             emple.setId_empleado(id);
             
             String nom = JOptionPane.showInputDialog(null, "Ingrese nombre" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
-            nom = nom + " ";
             emple.setNombre(nom);
            
             String app = JOptionPane.showInputDialog(null, "Ingrese apellido paterno" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
-            app = app + " ";
             emple.setApellidoP(app);
            
             String tel = JOptionPane.showInputDialog(null, "Ingrese telefono" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
-            tel = tel + " ";
             emple.setTelefono(tel);
             
             String eml = JOptionPane.showInputDialog(null, "Ingrese email" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
@@ -178,9 +175,13 @@ public class Empleado implements IDepartamentos, IEmpleado{
                     
                     escribirLinea.println();
                     escribirLinea.print(id);
+                    escribirLinea.print(" ");
                     escribirLinea.print(nom);
+                    escribirLinea.print(" ");
                     escribirLinea.print(app);
+                    escribirLinea.print(" ");
                     escribirLinea.print(tel);
+                    escribirLinea.print(" ");
                     escribirLinea.print(eml);
                     escribirLinea.print(" ");
                     escribirLinea.print(idDeptAux);
