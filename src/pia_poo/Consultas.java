@@ -3,9 +3,11 @@ package pia_poo;
 import java.util.Scanner;
 import static pia_poo.IDepartamentos.*;
 
+//                                  AQUÍ SÓLO AGREGUÉ LA NUEVA OPCIÓN QUE ES DE ESTADO 
+
 public class Consultas {
 
-    public static void ConsultaEmpNombre(Empleado[] empleados, int contEmp) {
+    public static void ConsultaEmpNombre(Empleado[] empleados, int contEmp){
         System.out.println("\t\t- - - Consulta Nombre - - -\n");
         Scanner scan = new Scanner(System.in);
         String buscar;
@@ -18,7 +20,10 @@ public class Consultas {
                 System.out.println("\nEmpleado #" + (i + 1));
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
-                System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
+                //CAMBIE EL .GETID_DEPTO, YA QUE ME SALÍA ERROR AL EJECUTAR Y ME SACABA
+                //ASÍ TAMBIÉN EN LOS QUE ESTÁN DESPUÉS DE ESTA CLASE
+                System.out.println("\tDepartamento: " + empleados[i].getId_departamento()+ " - Sueldo: $" + empleados[i].getSueldo());                
+                System.out.println("\tActividad: " + empleados[i].getActivo());                
                 System.out.println();
             }
         }
@@ -55,7 +60,8 @@ public class Consultas {
                 System.out.println("\nEmpleado #" + (i + 1));
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
-                System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
+                System.out.println("\tDepartamento: " + empleados[i].getId_departamento()+ " - Sueldo: $" + empleados[i].getSueldo());
+                System.out.println("\tActividad: " + empleados[i].getActivo());
                 System.out.println();
             }
         }
@@ -75,7 +81,8 @@ public class Consultas {
             System.out.println("\nEmpleado #" + (i + 1));
             System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
             System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
-            System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
+            System.out.println("\tDepartamento: " + empleados[i].getId_departamento()+ " - Sueldo: $" + empleados[i].getSueldo());
+            System.out.println("\tActividad: " + empleados[i].getActivo());           
             System.out.println();
         }
     }
@@ -91,6 +98,7 @@ public class Consultas {
             System.out.println("\tNombre: " + coordinadores[i].getNombre() + " " + coordinadores[i].getApellidoP() + " - Id: " + coordinadores[i].getId_Empleado());
             System.out.println("\tEmail: " + coordinadores[i].getEmail() + " - Teléfono: " + coordinadores[i].getTelefono());
             System.out.println("\tSueldo: $" + coordinadores[i].getSueldo());
+            System.out.println("\tActividad: " + coordinadores[i].getActivo());
             System.out.println();
         }
     }

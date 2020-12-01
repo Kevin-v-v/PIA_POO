@@ -39,6 +39,9 @@ public class PIA_POO {
                         empleados[cont].setId_departamento(Integer.toString(deptAux));
                         float sueldoAux = entrada.nextFloat();
                         empleados[cont].setSueldo(sueldoAux);
+                        //Nuevos cambios
+                        boolean activoAux = entrada.nextBoolean();
+                        empleados[cont].setActivo(activoAux);
                         cont++;
 
                     }
@@ -82,6 +85,9 @@ public class PIA_POO {
                         cordi[cont].setEmail(emailAux);
                         float sueldoAux = entrada.nextFloat();
                         cordi[cont].setSueldo(sueldoAux);
+                        //Nuevos cambios
+                        boolean activoAux = entrada.nextBoolean();                       
+                        cordi[cont].setActivo(activoAux);
                         cont++;
 
                     }
@@ -113,12 +119,13 @@ public class PIA_POO {
         System.out.println("2.-- REGISTRAR EMPLEADOS");
         System.out.println("3.-- CONSULTAS EMPLEADOS");
         System.out.println("4.-- CONSULTA DE COORDINADORES");
-        System.out.println("5.-- GUARDAR Y SALIR");
+        System.out.println("5.-- BAJAS");
+        System.out.println("6.-- GUARDAR Y SALIR");
         System.out.println("========================================");
         System.out.println("Ingrese una opcion: > ");
         opc = in.nextInt();
         in.nextLine();
-        }while(opc<1||opc>5);
+        }while(opc<1||opc>6);
         
         switch(opc){
             case 1:
@@ -163,11 +170,28 @@ public class PIA_POO {
                 Consultas.ConsultaCoordi(coordinadores, contCordi);
                 break;
             case 5:
+                do{
+                    System.out.println("=== BAJAS ===");
+                    System.out.println("1.-- BAJA DE EMPLEADOS");
+                    System.out.println("2.-- BAJA DE COORDINADORES");
+                    System.out.println("========================================");
+                    System.out.println("Ingrese una opción: > ");
+                    opc = in.nextInt();
+                    in.nextLine();               
+                }while(opc < 1 || opc > 2);
+                switch(opc){
+                    case 1:
+                        Bajas.bajaEmpleado(empleados, contEmp);
+                        break;
+                    case 2:
+                        Bajas.bajaCoordinador(coordinadores, contCordi);
+                        break;                  
+                }
+                break;
+            case 6:
                 System.out.println("Gracias por usar el programa");
                 break;
         }
-        }while(opc!=5);
-
-    }
-    
+        }while(opc!=6);          
+    }   
 }

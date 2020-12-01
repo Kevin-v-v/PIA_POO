@@ -32,6 +32,8 @@ public class Coordinador extends Empleado implements IEmpleado{
         String eml = sc.nextLine();
         coordi.setEmail(eml);
         coordi.setSueldo(coordi.calcularSueldo());
+        //Nuevo cambio
+        //coordi.setActivo(true);
         
         File archivoCoordinador;
             FileWriter escribir;
@@ -56,6 +58,9 @@ public class Coordinador extends Empleado implements IEmpleado{
                     escribirLinea.print(eml);
                     escribirLinea.print(" ");
                     escribirLinea.print(coordi.getSueldo());
+                    //NUEVOS CAMBIOS
+                    escribirLinea.print(" ");
+                    escribirLinea.print(true);
                             
                     escribir.close();
                     escribirLinea.close();

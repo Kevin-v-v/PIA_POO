@@ -10,6 +10,10 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//AGREGUÉ AL REGISTRAR LA OPCIÓN DE ESTADO
+//ADEMÁS DEL NUEVO ATRIBUTO Y SUS GETTERS Y SETTERS
+//AGREGUÉ TAMBIEN EN LA ESCRITURA DEL ARCHIVO LA LÍNEA DEL ESTADO
+
 public class Empleado implements IDepartamentos, IEmpleado{
 
     /**
@@ -34,6 +38,8 @@ public class Empleado implements IDepartamentos, IEmpleado{
     private String telefono;
     private String email;
     private float sueldo;
+    //NUEVO
+    private boolean activo;
     
     public String getNombre() {
         return nombre;
@@ -96,6 +102,14 @@ public class Empleado implements IDepartamentos, IEmpleado{
         this.sueldo = sueldo;
     }
     
+    public boolean getActivo(){
+        return activo;
+    }
+    
+    public void setActivo(boolean activo){
+        this.activo = activo;
+    }
+    
     Scanner var = new Scanner(System.in);
     
     //calcularSueldo() se hereda a Coordinador
@@ -152,6 +166,8 @@ public class Empleado implements IDepartamentos, IEmpleado{
             }while(!band);
             float sueldoAux = calcularSueldo();
             emple.setSueldo(sueldoAux);
+            //Nuevo cambio
+            //emple.setActivo(true);
             File archivoEmpleado;
             FileWriter escribir;
             PrintWriter escribirLinea;
@@ -173,6 +189,9 @@ public class Empleado implements IDepartamentos, IEmpleado{
                     escribirLinea.print(idDeptAux);
                     escribirLinea.print(" ");
                     escribirLinea.print(sueldoAux);
+                    //NUEVOSCAMBIOS
+                    escribirLinea.print(" ");
+                    escribirLinea.print(true);
                             
                     escribir.close();
                     escribirLinea.close();
