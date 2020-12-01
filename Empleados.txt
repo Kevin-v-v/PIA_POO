@@ -1,5 +1,8 @@
-1910449 Edgardo Valdez 8921212221 edgardo@hotmail.com 5 2343.12
-2132345 Juan Perez 833331223 asdds@hotmail.com 4 1234.4
-2017288 Ricardo Lopez 892143234 ricardo@gmail.com 3 6.0
-2021695 Enrique Gaytan 892143234 enrique@yahoo.com 4 48.0
-1910442 Antonio Gzz 89231234 antonio@gmail.com 4 8.0
+1910449 Edgardo Valdez 8921212221 edgardo@hotmail.com 4 2343.12
+2132345 Juan Perez 833331223 asdds@hotmail.com 3 1234.4
+2017288 Ricardo Lopez 892143234 ricardo@gmail.com 2 6.0
+2021695 Enrique Gaytan 892143234 enrique@yahoo.com 3 48.0
+1910442 Antonio Gzz 89231234 antonio@gmail.com 1 8.0
+kevin kevin villalobos 1938239 lsndjs 0 190.0
+192832 joaquin lopez 293983 ekfjf 0 190.0
+21423123 hector cruz 293848 juan@juan 4 110.0

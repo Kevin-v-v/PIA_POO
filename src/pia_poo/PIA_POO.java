@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class PIA_POO {
@@ -49,9 +50,10 @@ public class PIA_POO {
             }
             catch(Exception ex)
             {
-                System.out.println(ex.getMessage());
+                JOptionPane.showMessageDialog(null,ex.getMessage()  , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+               // System.out.println(ex.getMessage());
             }
-            System.out.println("El archivo de Empleados fue leido exitosamente");
+            JOptionPane.showMessageDialog(null, "El archivo de Empleados fue leido exitosamente" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
             return cont;
         }
      public static int leerArchivoCordi(Coordinador[] cordi){
@@ -93,11 +95,13 @@ public class PIA_POO {
             {
                 System.out.println(ex.getMessage());
             }
-            System.out.println("El archivo de Coordinadores fue leido exitosamente");
+            JOptionPane.showMessageDialog(null, "El archivo de Coordinadores fue leido exitosamente" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+//System.out.println("El archivo de Coordinadores fue leido exitosamente");
             return cont;
      }
     
     public static void main(String[] args) {
+       
         
         Coordinador[] coordinadores = new Coordinador[10];
         Empleado[] empleados = new Empleado[100];
@@ -108,7 +112,10 @@ public class PIA_POO {
         contEmp = leerArchivoEmp(empleados);//aqui se lee los datos de empleados
         do{
         do{
-        System.out.println("=== PROGRAMA DE GESTION DE PERSONAL ===");
+            String[] opciones = {"REGISTRAR COORDINADORES","REGISTRAR EMPLEADOS","CONSULTAS EMPLEADOS","CONSULTA DE COORDINADORES", "GUARDAR Y SALIR"};
+            opc=JOptionPane.showOptionDialog(null, "Bienvenido, por favor elija una opcion", "PROGRAMA DE GESTION DE PERSONAL", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, opciones, null);
+            opc++;
+       /* System.out.println("=== PROGRAMA DE GESTION DE PERSONAL ===");
         System.out.println("1.-- REGISTRAR COORDINADORES");
         System.out.println("2.-- REGISTRAR EMPLEADOS");
         System.out.println("3.-- CONSULTAS EMPLEADOS");
@@ -117,7 +124,7 @@ public class PIA_POO {
         System.out.println("========================================");
         System.out.println("Ingrese una opcion: > ");
         opc = in.nextInt();
-        in.nextLine();
+        in.nextLine();*/
         }while(opc<1||opc>5);
         
         switch(opc){
@@ -125,9 +132,10 @@ public class PIA_POO {
                 if(contCordi<=9){
                 coordinadores[contCordi] = new Coordinador();
                 coordinadores[contCordi].registarCoordinadores(coordinadores[contCordi]);
+                contCordi++;
                 }
                 else
-                    System.out.println("Excedio el número máximo de coordinadores");
+                    JOptionPane.showMessageDialog(null, "Excedio el número máximo de coordinadores", "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                 break;
             case 2:
                 
@@ -135,20 +143,25 @@ public class PIA_POO {
                 {
                     empleados[contEmp] = new Empleado();
                     empleados[contEmp].registarEmpleados(empleados[contEmp]);
+                    contEmp++;
                 }
                 else
-                    System.out.println("Excedio el número máximo de empleados");
+                    JOptionPane.showMessageDialog(null, "Excedio el número máximo de empleados", "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                 break;
             case 3:
                     do{
-                        System.out.println("=== CONSULTA DE EMPLEADOS ===");
+                        String[] opciones = {"CONSULTA POR NOMBRE","CONSULTA POR DEPARTAMENTO","MOSTRAR TODOS"};
+
+                        opc=JOptionPane.showOptionDialog(null, "=== CONSULTA DE EMPLEADOS ===\nPor favor elija una opcion", "PROGRAMA DE GESTION DE PERSONAL", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, opciones, null);
+                        opc++;
+                       /* System.out.println("=== CONSULTA DE EMPLEADOS ===");
                         System.out.println("1.-- CONSULTA POR NOMBRE");
                         System.out.println("2.-- CONSULTA POR DEPARTAMENTO");
                         System.out.println("3.-- MOSTRAR TODOS");
                         System.out.println("========================================");
                         System.out.println("Ingrese una opcion: > ");
                         opc = in.nextInt();
-                        in.nextLine();
+                        in.nextLine();*/
                     }while(opc<1||opc>3);
                     switch(opc){
                         case 1: Consultas.ConsultaEmpNombre(empleados,contEmp);
@@ -163,7 +176,7 @@ public class PIA_POO {
                 Consultas.ConsultaCoordi(coordinadores, contCordi);
                 break;
             case 5:
-                System.out.println("Gracias por usar el programa");
+                JOptionPane.showMessageDialog(null, "Gracias por usar el programa", "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                 break;
         }
         }while(opc!=5);

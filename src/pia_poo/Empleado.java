@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Empleado implements IDepartamentos, IEmpleado{
 
@@ -104,11 +105,12 @@ public class Empleado implements IDepartamentos, IEmpleado{
         int horas;
         float pago;
         
-        System.out.println("Ingrese horas trabajadas");
-        horas=var.nextInt();
-        System.out.println("Ingrese pago por hora");
-        pago=var.nextFloat();
-        System.out.println("Sueldo: $" + horas*pago);
+        //System.out.println("Ingrese horas trabajadas");
+        horas=Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese las horas trabajadas" , "Calculo de Sueldo", JOptionPane.INFORMATION_MESSAGE));
+        //System.out.println("Ingrese pago por hora");
+        pago=Float.parseFloat(JOptionPane.showInputDialog(null, "Ingrese el pago por hora" , "Calculo de Sueldo", JOptionPane.INFORMATION_MESSAGE));
+        JOptionPane.showMessageDialog(null, "Sueldo: $" + horas*pago, "Calculo de Sueldo", JOptionPane.INFORMATION_MESSAGE, null);
+//System.out.println("Sueldo: $" + horas*pago);
         return horas*pago;
     }
    
@@ -117,30 +119,30 @@ public class Empleado implements IDepartamentos, IEmpleado{
         
             
             boolean band = false;
-            System.out.println("Ingrese id de empleado");
-            String id = var.nextLine();
+            //System.out.println("Ingrese id de empleado");
+            String id = JOptionPane.showInputDialog(null, "Ingrese id de coordinador" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             id = id + " ";
             emple.setId_empleado(id);
-            System.out.println("Ingrese nombre");
-            String nom = var.nextLine();
+            //System.out.println("Ingrese nombre");
+            String nom = JOptionPane.showInputDialog(null, "Ingrese nombre" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             nom = nom + " ";
             emple.setNombre(nom);
-            System.out.println("Ingrese apellido paterno");
-            String app = var.nextLine();
+            //System.out.println("Ingrese apellido paterno");
+            String app = JOptionPane.showInputDialog(null, "Ingrese apellido paterno" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             app = app + " ";
             emple.setApellidoP(app);
-            System.out.println("Ingrese telefono");
-            String tel = var.nextLine();
+            //System.out.println("Ingrese telefono");
+            String tel = JOptionPane.showInputDialog(null, "Ingrese telefono" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             tel = tel + " ";
             emple.setTelefono(tel);
-            System.out.println("Ingrese email");
-            String eml = var.nextLine();
+            //System.out.println("Ingrese email");
+            String eml = JOptionPane.showInputDialog(null, "Ingrese email" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             emple.setEmail(eml);
             int idDeptAux = 0;
             do{
             band = false;
-            System.out.println("Ingrese el departamento sin acentos");
-            String depa = var.nextLine();
+            //System.out.println("Ingrese el departamento sin acentos");
+            String depa = JOptionPane.showInputDialog(null, "Ingrese el departamento sin acentos" , "Registro de Empleados", JOptionPane.INFORMATION_MESSAGE);
             for(int i=0; i<5; i++){
                 if(depa.equalsIgnoreCase(NOM_DEPTOS[i])){
                     band=true;
@@ -189,7 +191,8 @@ public class Empleado implements IDepartamentos, IEmpleado{
 
     @Override
     public void empleadoTrabaja() {
-        System.out.println(DEPTO_TRABAJA[Integer.parseInt(id_departamento)]);
+        JOptionPane.showMessageDialog(null, DEPTO_TRABAJA[Integer.parseInt(id_departamento)], "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+        //System.out.println(DEPTO_TRABAJA[Integer.parseInt(id_departamento)]);
     
     }
     

@@ -7,29 +7,30 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Coordinador extends Empleado implements IEmpleado{
     
     private String id_coordinador;
    
-    Scanner sc = new Scanner(System.in);
+
     
  
     public void registarCoordinadores(Coordinador coordi) {
-        System.out.println("Ingrese id de coordinador");
-        String id = sc.nextLine();
+        //System.out.println("Ingrese id de coordinador");
+        String id = JOptionPane.showInputDialog(null, "Ingrese id de coordinador" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setId_Coordinador(id);
-        System.out.println("Ingrese nombre");
-        String nom = sc.nextLine();
+        //System.out.println("Ingrese nombre");
+        String nom = JOptionPane.showInputDialog(null, "Ingrese nombre" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setNombre(nom);
-        System.out.println("Ingrese apellido paterno");
-        String app = sc.nextLine();
+        //System.out.println("Ingrese ");
+        String app = JOptionPane.showInputDialog(null, "Ingrese apellido paterno" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setApellidoP(app);
-        System.out.println("Ingrese telefono");
-        String tel = sc.nextLine();
+        //System.out.println("Ingrese telefono");
+        String tel = JOptionPane.showInputDialog(null, "Ingrese telefono" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setTelefono(tel);
-        System.out.println("Ingrese email");
-        String eml = sc.nextLine();
+        //System.out.println("Ingrese email");
+        String eml = JOptionPane.showInputDialog(null, "Ingrese email" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setEmail(eml);
         coordi.setSueldo(coordi.calcularSueldo());
         
@@ -78,8 +79,7 @@ public class Coordinador extends Empleado implements IEmpleado{
 
     @Override
     public void empleadoTrabaja() {
-        //Este metodo debe mostrar un mensaje que describa el trabajo del coordinador
-    }
+    JOptionPane.showMessageDialog(null, "Los coordinadores se dedican a mantener el orden entre los empleados, resuelven problemas de mayor importancia y vigilan que los empleados esten realizando bien sus labores" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);    }
 
    
 }
