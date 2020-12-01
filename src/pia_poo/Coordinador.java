@@ -17,19 +17,19 @@ public class Coordinador extends Empleado implements IEmpleado{
     
  
     public void registarCoordinadores(Coordinador coordi) {
-        //System.out.println("Ingrese id de coordinador");
+        
         String id = JOptionPane.showInputDialog(null, "Ingrese id de coordinador" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setId_Coordinador(id);
-        //System.out.println("Ingrese nombre");
+       
         String nom = JOptionPane.showInputDialog(null, "Ingrese nombre" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setNombre(nom);
-        //System.out.println("Ingrese ");
+       
         String app = JOptionPane.showInputDialog(null, "Ingrese apellido paterno" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setApellidoP(app);
-        //System.out.println("Ingrese telefono");
+        
         String tel = JOptionPane.showInputDialog(null, "Ingrese telefono" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setTelefono(tel);
-        //System.out.println("Ingrese email");
+        
         String eml = JOptionPane.showInputDialog(null, "Ingrese email" , "Registro de Coordinadores", JOptionPane.INFORMATION_MESSAGE);
         coordi.setEmail(eml);
         coordi.setSueldo(coordi.calcularSueldo());

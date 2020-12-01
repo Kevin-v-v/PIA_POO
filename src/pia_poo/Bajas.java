@@ -23,8 +23,7 @@ public class Bajas {
         
         do{
             
-            //System.out.println("\t\t- - - BAJAS EMPLEADOS - - -");
-            //System.out.printf("Ingrese el id del empleado\n>");
+          
             buscar = JOptionPane.showInputDialog(null, "Ingrese id de empleado" , "Baja de empleados", JOptionPane.INFORMATION_MESSAGE);
             for(int i = 0; i < contEmp; i++){
                 if(buscar.equalsIgnoreCase(empleados[i].getId_empleado())){ 
@@ -35,7 +34,7 @@ public class Bajas {
             }
             if(!val){
                 JOptionPane.showMessageDialog(null, "No existe empleado con id: " + buscar , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
-                //System.out.println("No existe empleado con id: " + buscar);
+               
             }
         }while(!val);
         
@@ -89,8 +88,7 @@ public class Bajas {
         Scanner scan = new Scanner(System.in);
         String buscar = null;   
         do{
-            System.out.println("\t\t- - - BAJAS COORDINADORES - - -");
-            System.out.printf("Ingrese el id del coordinador\n>");
+            
             buscar = JOptionPane.showInputDialog(null, "Ingrese id del coordinador" , "Baja de coordinadores", JOptionPane.INFORMATION_MESSAGE);           
             for(int i = 0; i < contCoordi; i++){               
                 if(buscar.equalsIgnoreCase(coordinadores[i].getId_Empleado())){ 
@@ -111,7 +109,7 @@ public class Bajas {
             File archivoNuevo = new File( "Coordinadores.txt");
             FileWriter escribir;
             PrintWriter escribirLinea;
-            //archivoCoordinador = new File( "Coordinadores.txt");
+           
             
                 try {
                     archivoNuevo.createNewFile();

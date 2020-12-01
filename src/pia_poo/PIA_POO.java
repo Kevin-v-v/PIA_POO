@@ -58,7 +58,7 @@ public class PIA_POO {
             catch(Exception ex)
             {
                 JOptionPane.showMessageDialog(null,ex.getMessage()  , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
-               // System.out.println(ex.getMessage());
+               
             }
             JOptionPane.showMessageDialog(null, "El archivo de Empleados fue leido exitosamente" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
             return cont;
@@ -104,10 +104,10 @@ public class PIA_POO {
             }
             catch(Exception ex)
             {   JOptionPane.showMessageDialog(null,ex.getMessage()  , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
-                //System.out.println(ex.getMessage());
+                
             }
             JOptionPane.showMessageDialog(null, "El archivo de Coordinadores fue leido exitosamente" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
-//System.out.println("El archivo de Coordinadores fue leido exitosamente");
+
             return cont;
      }
     
@@ -126,17 +126,7 @@ public class PIA_POO {
             String[] opciones = {"REGISTRAR COORDINADORES","REGISTRAR EMPLEADOS","CONSULTAS EMPLEADOS","CONSULTA DE COORDINADORES","Bajas", "GUARDAR Y SALIR"};
             opc=JOptionPane.showOptionDialog(null, "Bienvenido, por favor elija una opcion", "PROGRAMA DE GESTION DE PERSONAL", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, opciones, null);
             opc++;
-       /* System.out.println("=== PROGRAMA DE GESTION DE PERSONAL ===");
-        System.out.println("1.-- REGISTRAR COORDINADORES");
-        System.out.println("2.-- REGISTRAR EMPLEADOS");
-        System.out.println("3.-- CONSULTAS EMPLEADOS");
-        System.out.println("4.-- CONSULTA DE COORDINADORES");
-        System.out.println("5.-- BAJAS");
-        System.out.println("6.-- GUARDAR Y SALIR");
-        System.out.println("========================================");
-        System.out.println("Ingrese una opcion: > ");
-        opc = in.nextInt();
-        in.nextLine();*/
+       
         }while(opc<1||opc>6);
         
         switch(opc){
@@ -166,14 +156,7 @@ public class PIA_POO {
 
                         opc=JOptionPane.showOptionDialog(null, "=== CONSULTA DE EMPLEADOS ===\nPor favor elija una opcion", "PROGRAMA DE GESTION DE PERSONAL", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, opciones, null);
                         opc++;
-                       /* System.out.println("=== CONSULTA DE EMPLEADOS ===");
-                        System.out.println("1.-- CONSULTA POR NOMBRE");
-                        System.out.println("2.-- CONSULTA POR DEPARTAMENTO");
-                        System.out.println("3.-- MOSTRAR TODOS");
-                        System.out.println("========================================");
-                        System.out.println("Ingrese una opcion: > ");
-                        opc = in.nextInt();
-                        in.nextLine();*/
+                       
                     }while(opc<1||opc>3);
                     switch(opc){
                         case 1: Consultas.ConsultaEmpNombre(empleados,contEmp);
@@ -189,13 +172,7 @@ public class PIA_POO {
                 break;
             case 5:
                  do{
-                    /*System.out.println("=== BAJAS ===");
-                    System.out.println("1.-- BAJA DE EMPLEADOS");
-                    System.out.println("2.-- BAJA DE COORDINADORES");
-                    System.out.println("========================================");
-                    System.out.println("Ingrese una opción: > ");
-                    opc = in.nextInt();
-                    in.nextLine();  */ 
+                    
                     String[] opciones = {"BAJA DE EMPLEADOS","BAJA DE COORDINADORES"};
 
                         opc=JOptionPane.showOptionDialog(null, "=== BAJAS ===\nPor favor elija una opcion", "PROGRAMA DE GESTION DE PERSONAL", JOptionPane.DEFAULT_OPTION, JOptionPane.DEFAULT_OPTION, null, opciones, null);
