@@ -24,7 +24,8 @@ public class Consultas {
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
                 System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
-                System.out.println();*/
+                System.out.println();
+                System.out.println("\tActividad: " + empleados[i].getActivo());*/
             }
         }
         if(!band){
@@ -66,7 +67,8 @@ public class Consultas {
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
                 System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
-                System.out.println();*/
+                System.out.println();
+                System.out.println("\tActividad: " + empleados[i].getActivo());*/
             }
         }
         if(!band){
@@ -87,7 +89,8 @@ public class Consultas {
             System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
             System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
             System.out.println("\tDepartamento: " + empleados[i].get_depto() + " - Sueldo: $" + empleados[i].getSueldo());
-            System.out.println();*/
+            System.out.println();
+            System.out.println("\tActividad: " + empleados[i].getActivo());*/
         }
     }
     
@@ -104,7 +107,8 @@ public class Consultas {
             System.out.println("\tNombre: " + coordinadores[i].getNombre() + " " + coordinadores[i].getApellidoP() + " - Id: " + coordinadores[i].getId_Empleado());
             System.out.println("\tEmail: " + coordinadores[i].getEmail() + " - Teléfono: " + coordinadores[i].getTelefono());
             System.out.println("\tSueldo: $" + coordinadores[i].getSueldo());
-            System.out.println();*/
+            System.out.println();
+            System.out.println("\tActividad: " + coordinadores[i].getActivo());*/
         }
     }
 

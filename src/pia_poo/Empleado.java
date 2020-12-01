@@ -36,6 +36,16 @@ public class Empleado implements IDepartamentos, IEmpleado{
     private String email;
     private float sueldo;
     
+     //NUEVO
+    private boolean activo;
+    public boolean getActivo(){
+        return activo;
+    }
+
+    public void setActivo(boolean activo){
+        this.activo = activo;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -152,6 +162,7 @@ public class Empleado implements IDepartamentos, IEmpleado{
                 }
             }
             }while(!band);
+            emple.setActivo(true);
             float sueldoAux = calcularSueldo();
             emple.setSueldo(sueldoAux);
             File archivoEmpleado;
@@ -175,7 +186,9 @@ public class Empleado implements IDepartamentos, IEmpleado{
                     escribirLinea.print(idDeptAux);
                     escribirLinea.print(" ");
                     escribirLinea.print(sueldoAux);
-                            
+                    escribirLinea.print(" ");
+                    escribirLinea.print(true);
+                    
                     escribir.close();
                     escribirLinea.close();
                 } catch (IOException ex) {

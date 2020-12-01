@@ -57,7 +57,10 @@ public class Coordinador extends Empleado implements IEmpleado{
                     escribirLinea.print(eml);
                     escribirLinea.print(" ");
                     escribirLinea.print(coordi.getSueldo());
-                            
+                    //NUEVOS CAMBIOS
+                    escribirLinea.print(" ");
+                    escribirLinea.print(true);
+                    
                     escribir.close();
                     escribirLinea.close();
                 } catch (IOException ex) {
