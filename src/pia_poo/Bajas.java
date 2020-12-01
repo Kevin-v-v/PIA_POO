@@ -28,52 +28,58 @@ public class Bajas {
             buscar = JOptionPane.showInputDialog(null, "Ingrese id de empleado" , "Baja de empleados", JOptionPane.INFORMATION_MESSAGE);
             for(int i = 0; i < contEmp; i++){
                 if(buscar.equalsIgnoreCase(empleados[i].getId_empleado())){ 
-                    val = false;
-                    empleados[i].setActivo(val);
-                    val = true;
+                    val=true;
+                    empleados[i].setActivo(false);
+                    break;
                 }                                          
             }
-            if(val = true){
+            if(!val){
                 JOptionPane.showMessageDialog(null, "No existe empleado con id: " + buscar , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                 //System.out.println("No existe empleado con id: " + buscar);
             }
-        }while(val != true);
+        }while(!val);
         
-        /*
-        if(val==true){
-            File archivoCoordinador;
+        
+      
+         //intento
+             File archivoViejo = new File( "Empleados.txt");
+            archivoViejo.delete();
+            File archivoNuevo = new File( "Empleados.txt");
             FileWriter escribir;
             PrintWriter escribirLinea;
-            archivoCoordinador = new File( "Empleados.txt");
+            archivoNuevo = new File( "Empleados.txt");
             
                 try {
-                    archivoCoordinador.createNewFile();
+                    archivoNuevo.createNewFile();
                     
-                    escribir = new FileWriter(archivoCoordinador, true);
+                    escribir = new FileWriter(archivoNuevo, false);
                     escribirLinea = new PrintWriter(escribir);
-                    
+                    for (int i = 0; i < contEmp; i++) {
                     escribirLinea.println();
-                    escribirLinea.print(empleados[5].getId_empleado());
+                    escribirLinea.print(empleados[i].getId_empleado());
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getNombre());
+                    escribirLinea.print(empleados[i].getNombre());
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getApellidoP());
+                    escribirLinea.print(empleados[i].getApellidoP());
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getTelefono());
+                    escribirLinea.print(empleados[i].getTelefono());
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getEmail());
+                    escribirLinea.print(empleados[i].getEmail());
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getSueldo());
+                    escribirLinea.print(empleados[i].getId_departamento());
+                    escribirLinea.print(" ");
+                    escribirLinea.print(empleados[i].getSueldo());
                     //NUEVOS CAMBIOS
                     escribirLinea.print(" ");
-                    escribirLinea.print(empleados[5].getActivo());
-                            
+                    escribirLinea.print(empleados[i].getActivo());
+                    
+                    }
                     escribir.close();
                     escribirLinea.close();
                 } catch (IOException ex) {
                     Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        }*/
+        
         
        
     }
@@ -97,41 +103,49 @@ public class Bajas {
             }
         }while(val != true);
         
-        /*
-        if(val==true){
-            File archivoCoordinador;
+        
+       
+            //intento
+            File archivoViejo = new File( "Coordinadores.txt");
+            archivoViejo.delete();
+            File archivoNuevo = new File( "Coordinadores.txt");
             FileWriter escribir;
             PrintWriter escribirLinea;
-            archivoCoordinador = new File( "Coordinadores.txt");
+            //archivoCoordinador = new File( "Coordinadores.txt");
             
                 try {
-                    archivoCoordinador.createNewFile();
+                    archivoNuevo.createNewFile();
                     
-                    escribir = new FileWriter(archivoCoordinador, true);
+                    escribir = new FileWriter(archivoNuevo, false); 
                     escribirLinea = new PrintWriter(escribir);
+                    for (int i = 0; i < contCoordi; i++) {
+                        
+                    
+                   
                     
                     escribirLinea.println();
-                    escribirLinea.print(coordinadores[0].getId_Empleado());
+                    escribirLinea.print(coordinadores[i].getId_Empleado());
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getNombre());
+                    escribirLinea.print(coordinadores[i].getNombre());
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getApellidoP());
+                    escribirLinea.print(coordinadores[i].getApellidoP());
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getTelefono());
+                    escribirLinea.print(coordinadores[i].getTelefono());
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getEmail());
+                    escribirLinea.print(coordinadores[i].getEmail());
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getSueldo());
+                    escribirLinea.print(coordinadores[i].getSueldo());
                     //NUEVOS CAMBIOS
                     escribirLinea.print(" ");
-                    escribirLinea.print(coordinadores[0].getActivo());
-                            
+                    escribirLinea.print(coordinadores[i].getActivo());
+                    
+                }
                     escribir.close();
                     escribirLinea.close();
                 } catch (IOException ex) {
                     Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        }*/
+        
         
     }
     

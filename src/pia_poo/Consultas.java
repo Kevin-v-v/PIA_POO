@@ -19,7 +19,7 @@ public class Consultas {
         for (int i = 0; i < contEmp; i++) {
             if (buscar.equalsIgnoreCase(empleados[i].getNombre())) {
                 band=true;
-                JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\n Id: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\n Teléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\n Sueldo: $" + empleados[i].getSueldo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+                JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\n Id: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\n Teléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\n Sueldo: $" + empleados[i].getSueldo() + "\nActividad: " + empleados[i].getActivo(), "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                /* System.out.println("\nEmpleado #" + (i + 1));
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
@@ -62,7 +62,7 @@ public class Consultas {
             
             if (depa.equalsIgnoreCase(empleados[i].get_depto())) {
                 band=true;
-                JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + DEPTO_TRABAJA[depnum] + "\n\n" +  "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\n Id: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\n Teléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\n Sueldo: $" + empleados[i].getSueldo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+                JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + DEPTO_TRABAJA[depnum] + "\n\n" +  "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\n Id: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\n Teléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\n Sueldo: $" + empleados[i].getSueldo() + "\nActividad: " + empleados[i].getActivo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
                 /*System.out.println("\nEmpleado #" + (i + 1));
                 System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
                 System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
@@ -84,7 +84,7 @@ public class Consultas {
        }
         //System.out.println("\t\t- - - Consulta Empleados - - -\n");
         for (int i = 0; i < contEmp; i++) {
-            JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\nId: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\nTeléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\nSueldo: $" + empleados[i].getSueldo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+            JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" + "\nEmpleado #" + (i + 1)+ "\nNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + "\nId: " + empleados[i].getId_empleado() + "\nEmail: " + empleados[i].getEmail() + "\nTeléfono: " + empleados[i].getTelefono() + "\nDepartamento: " + empleados[i].get_depto() + "\nSueldo: $" + empleados[i].getSueldo() + "\nActividad: " + empleados[i].getActivo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
             /*System.out.println("\nEmpleado #" + (i + 1));
             System.out.println("\tNombre: " + empleados[i].getNombre() + " " + empleados[i].getApellidoP() + " - Id: " + empleados[i].getId_empleado());
             System.out.println("\tEmail: " + empleados[i].getEmail() + " - Teléfono: " + empleados[i].getTelefono());
@@ -102,7 +102,7 @@ public class Consultas {
         coordinadores[0].empleadoTrabaja();
         //System.out.println("\t\t- - - Consulta Empleados - - -\n");
         for (int i = 0; i < contCoordi; i++) {
-            JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" +  "\nCoordinador #" + (i + 1)+ "\nNombre: " + coordinadores[i].getNombre() + " " + coordinadores[i].getApellidoP() + "\nId: " + coordinadores[i].getId_Empleado() + "\nEmail: " + coordinadores[i].getEmail() + "\nTeléfono: " + coordinadores[i].getTelefono() + "\nSueldo: $" + coordinadores[i].getSueldo() , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+            JOptionPane.showMessageDialog(null, "RESULTADO DE CONSULTA\n" +  "\nCoordinador #" + (i + 1)+ "\nNombre: " + coordinadores[i].getNombre() + " " + coordinadores[i].getApellidoP() + "\nId: " + coordinadores[i].getId_Empleado() + "\nEmail: " + coordinadores[i].getEmail() + "\nTeléfono: " + coordinadores[i].getTelefono() + "\nSueldo: $" + coordinadores[i].getSueldo() + "\nActividad: " + coordinadores[i].getActivo(), "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
             /*System.out.println("\nEmpleado #" + (i + 1));
             System.out.println("\tNombre: " + coordinadores[i].getNombre() + " " + coordinadores[i].getApellidoP() + " - Id: " + coordinadores[i].getId_Empleado());
             System.out.println("\tEmail: " + coordinadores[i].getEmail() + " - Teléfono: " + coordinadores[i].getTelefono());

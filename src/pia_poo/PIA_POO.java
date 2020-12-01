@@ -20,11 +20,14 @@ public class PIA_POO {
                 Scanner entrada = new Scanner( new File( "Empleados.txt") ); // Lee los datos dentro del archivo
                 BufferedReader leer=new BufferedReader(new FileReader ("Empleados.txt"));
                 String linea="";
+                
                 while((linea=leer.readLine()) != null)
                 {
                     contAux++;
+                    
                     if(linea.indexOf(empaux) != -1) // Al encontrar el dato buscado
                     {   
+                        
                         empleados[cont] = new Empleado();
                         String id_empleadoAux = entrada.next(); 
                         empleados[cont].setId_empleado(id_empleadoAux);
@@ -43,6 +46,7 @@ public class PIA_POO {
                         //Nuevos cambios
                         boolean activoAux = entrada.nextBoolean();
                         empleados[cont].setActivo(activoAux);
+                       
                         cont++;
 
                     }
@@ -88,6 +92,7 @@ public class PIA_POO {
                         float sueldoAux = entrada.nextFloat();
                         cordi[cont].setSueldo(sueldoAux);
                         //Nuevos cambios
+                        
                         boolean activoAux = entrada.nextBoolean();                       
                         cordi[cont].setActivo(activoAux);
                         cont++;
@@ -98,8 +103,8 @@ public class PIA_POO {
                 
             }
             catch(Exception ex)
-            {
-                System.out.println(ex.getMessage());
+            {   JOptionPane.showMessageDialog(null,ex.getMessage()  , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
+                //System.out.println(ex.getMessage());
             }
             JOptionPane.showMessageDialog(null, "El archivo de Coordinadores fue leido exitosamente" , "PROGRAMA DE GESTION DE EMPLEADOS", JOptionPane.INFORMATION_MESSAGE, null);
 //System.out.println("El archivo de Coordinadores fue leido exitosamente");
